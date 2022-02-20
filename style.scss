@@ -1,0 +1,105 @@
+//<Подключаем шрифты>=======================================================================================
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+//</Подключаем шрифты>=======================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: "Montserrat";
+//</Шрифт по умолчанию>==========================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null.scss";
+html,
+body,
+#root {
+  position: relative;
+  height: 100vh;
+  color: #fff;
+  background-color: #e9e9e9;
+  font-size: 14px;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  -webkit-user-select: none;
+  &.lock {
+    overflow: hidden;
+  }
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+  @media (max-width: 1192px) {
+    max-width: 970px;
+  }
+  @media (max-width: 991.98px) {
+    max-width: 750px;
+  }
+  @media (max-width: 767.98px) {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+.game {
+  width: 100%;
+  height: 100vh;
+}
+.menu {
+  position: fixed;
+  top: -100%;
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 200px;
+  background-color: darkgray;
+  border-radius: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  &-active {
+    top: 10%;
+  }
+}
+
+.title {
+  width: 100%;
+  font-weight: bold;
+  font-size: 60px;
+  text-align: center;
+}
+
+.new-game {
+  color: red;
+  position: relative;
+  background-color: #e9e9e900;
+  font-weight: bold;
+  font-size: 20px;
+
+  &:hover {
+    top: -2px;
+    left: 2px;
+  }
+}
+
+.img {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  z-index: 10000;
+  background-color: #33300000;
+  color: #000;
+}
